@@ -5,8 +5,10 @@ const exec = require('@actions/exec');
 const postMetrics = async () => {
   const startTime = core.getState("startTime");
   const endTime = Date.now();
+  console.log('Set start time to ' + new Date().toISOString());
   const diff = endTime - startTime;
-  console.log({startTime, endTime, diff});
+
+  console.log(`Job execution took ${diff}ms`)
 
   console.log({context: gh.context});
 
