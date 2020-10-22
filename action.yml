@@ -4,6 +4,12 @@ inputs:
   url:
     description: 'URL where to post the data'
     required: true
+  job:
+    description: 'Override a job name'
+    required: false
+  target:
+    description: 'Optional "target" tag'
+    required: false
 runs:
   using: "node12"
   main: "index.js"
