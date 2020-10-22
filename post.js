@@ -6,7 +6,7 @@ const postMetrics = async () => {
   const startTime = core.getState("startTime");
   const endTime = Date.now();
   console.log('Set start time to ' + new Date().toISOString());
-  const diff = endTime - startTime;
+  const diff = Math.round((endTime - startTime) / 1000);
 
   console.log(`Job execution took ${diff}ms`)
 
