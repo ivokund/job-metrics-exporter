@@ -7,7 +7,7 @@ const postMetrics = async () => {
   core.info(`Read startTime from state: ${startTime}`);
   const endTime = Date.now();
 
-  core.info('Start time is ' + new Date(startTime).toISOString());
+  core.info('Start time is ' + new Date(+startTime).toISOString());
 
   const diff = endTime - startTime;
   core.info(`Job execution took ${diff}ms`);
