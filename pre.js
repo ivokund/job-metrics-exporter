@@ -9,7 +9,7 @@ try {
 
   core.saveState("startTime", +start);
 
-  core.info(`Set start time to ${start.toISOString()}`);
+  core.info(`Set start time to ${core.getState('startTime')} (${start.toISOString()})`);
 } catch (error) {
   core.setFailed(error.message);
 }

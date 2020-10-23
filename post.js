@@ -4,9 +4,10 @@ const exec = require('@actions/exec');
 
 const postMetrics = async () => {
   const startTime = core.getState("startTime");
+  core.info(`Read startTime from state: ${startTime}`);
   const endTime = Date.now();
 
-  core.info('Set start time to ' + new Date(startTime).toISOString());
+  core.info('Start time is ' + new Date(startTime).toISOString());
 
   const diff = endTime - startTime;
   core.info(`Job execution took ${diff}ms`);
