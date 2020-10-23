@@ -8,11 +8,9 @@ try {
   }
 
   const startTimestamp = +start;
-  console.log(startTimestamp);
-
   core.saveState("startTime", `${startTimestamp}`);
 
-  core.info(`Set start time to ${core.getState('startTime')} (${start.toISOString()})`);
+  core.info(`Set start time to ${startTimestamp} (${start.toISOString()})`);
 } catch (error) {
   core.setFailed(error.message);
 }
