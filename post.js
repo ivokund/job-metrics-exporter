@@ -20,6 +20,8 @@ const postMetrics = async () => {
   };
   console.log('Metrics payload', payload);
 
+  core.setOutput('start', startTime);
+
   console.log('Posting metrics data to:', core.getInput('url'));
   await exec.exec('curl', [
     core.getInput('url'),

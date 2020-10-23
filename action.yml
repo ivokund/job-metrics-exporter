@@ -10,6 +10,12 @@ inputs:
   target:
     description: 'Optional "target" tag'
     required: false
+  start:
+    description: 'Optional start time, unix timestamp in ms'
+    required: false
+outputs:
+  start:
+    description: 'Start time used for this job'
 runs:
   using: "node12"
   main: "index.js"
