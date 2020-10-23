@@ -6,11 +6,10 @@ const postMetrics = async () => {
   const startTime = core.getState("startTime");
   const endTime = Date.now();
 
-  console.log('Set start time to ' + new Date().toISOString());
+  core.info('Set start time to ' + new Date(startTime).toISOString());
 
   const diff = endTime - startTime;
-  console.log(`Job execution took ${diff}ms`);
-  console.log({context: gh.context});
+  core.info(`Job execution took ${diff}ms`);
 
   const payload = {
     job: core.getInput('job') || gh.context.job,
@@ -21,8 +20,9 @@ const postMetrics = async () => {
   console.log('Metrics payload', payload);
 
   core.setOutput('start', startTime);
+  core.info(`Set output variable "start" to ${startTime}`);
 
-  console.log('Posting metrics data to:', core.getInput('url'));
+  core.info(`Posting metrics data to: ${core.getInput('url')}`);
   await exec.exec('curl', [
     core.getInput('url'),
     `--data`, JSON.stringify(payload),

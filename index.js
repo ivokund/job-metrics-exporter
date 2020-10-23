@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 
 try {
-  console.log('nothing to do here');
+  core.info('No actions done in this step');
 } catch (error) {
   core.setFailed(error.message);
 }
